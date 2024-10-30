@@ -47,7 +47,13 @@ class WebtoonCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Image.network(thumb),
+                  child: Image.network(
+                    thumb,
+                    headers: const {
+                      "User-Agent": "Mozilla/5.0",
+                      "Referer": "https://comic.naver.com",
+                    },
+                  ),
                 ),
               ),
             ),
@@ -57,7 +63,7 @@ class WebtoonCard extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: FontWeight.w600,
               ),
             ),
